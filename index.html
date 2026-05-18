@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandy Zeng – Mortgage Advisor | 英國按揭顧問</title>
+  <meta name="description" content="Specialist UK mortgage advice for the Hong Kong community. First-time buyers, buy-to-let, remortgaging, BN(O) visa holders. 專為英國港人提供按揭服務。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0d2d5e;
+      --mid:    #1a4a8a;
+      --gold:   #c9973a;
+      --gold-light: #f0c96a;
+      --light:  #f5f8ff;
+      --white:  #ffffff;
+      --text:   #1e1e2e;
+      --muted:  #5a6a85;
+      --border: #dde4ef;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(13,45,94,.10);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Utility ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 80px 0; }
+    .section-alt { background: var(--light); }
+    .tag {
+      display: inline-block;
+      background: var(--gold-light);
+      color: var(--navy);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 48px;
+      max-width: 560px;
+    }
+    .zh {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: .88em;
+      color: var(--muted);
+      display: block;
+      margin-top: 4px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+    .btn-primary  { background: var(--gold); color: var(--navy); }
+    .btn-outline  { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.6); }
+    .btn-outline:hover { background: rgba(255,255,255,.12); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,45,94,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--white); font-weight: 700; font-size: 1.05rem;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-logo {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; color: var(--navy);
+    }
+    .nav-links {
+      display: flex; gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta { display: flex; gap: 10px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--mid) 60%, #1e5ba8 100%);
+      color: var(--white);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      position: relative;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: .8rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero h1 em { color: var(--gold-light); font-style: normal; }
+    .hero-zh {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 500;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      color: rgba(255,255,255,.8);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .hero-desc-zh {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
+      margin-bottom: 32px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 20px;
+      padding: 36px 32px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-card-title {
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;
+    }
+    .hero-card-sub {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: .85rem; color: rgba(255,255,255,.65); margin-bottom: 24px;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .badge {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: .8rem; font-weight: 500;
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,.9);
+      font-size: .9rem; margin-bottom: 10px;
+    }
+    .contact-item svg { flex-shrink: 0; }
+    .fca-note {
+      font-size: .75rem; color: rgba(255,255,255,.5);
+      margin-top: 16px; border-top: 1px solid rgba(255,255,255,.15);
+      padding-top: 14px;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    /* ── Services ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--navy); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 20px;
+    }
+    .service-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .service-title-zh { font-family: 'Noto Sans TC', sans-serif; font-size: .82rem; color: var(--muted); margin-bottom: 12px; }
+    .service-desc { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── Why Sandy ── */
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+    .why-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .why-check {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+      color: var(--navy); font-weight: 800; font-size: .85rem;
+    }
+    .why-text strong { display: block; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+    .why-text small { font-family: 'Noto Sans TC', sans-serif; color: var(--muted); font-size: .82rem; }
+    .why-visual {
+      background: linear-gradient(135deg, var(--navy), var(--mid));
+      border-radius: 20px;
+      padding: 40px;
+      color: var(--white);
+    }
+    .why-stat { margin-bottom: 28px; }
+    .why-stat:last-child { margin-bottom: 0; }
+    .stat-num {
+      font-size: 2.4rem; font-weight: 800; color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-label { font-size: .9rem; color: rgba(255,255,255,.75); margin-top: 4px; }
+    .stat-label-zh { font-family: 'Noto Sans TC', sans-serif; font-size: .78rem; color: rgba(255,255,255,.5); }
+
+    /* ── BN(O) section ── */
+    .bno-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .bno-checklist { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .bno-checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: .95rem; line-height: 1.5;
+    }
+    .bno-checklist li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700; font-size: 1rem; flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* ── Process ── */
+    .process-steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0; position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: 10%; right: 10%;
+      height: 2px; background: var(--border);
+      z-index: 0;
+    }
+    .step {
+      text-align: center; padding: 0 20px 0; position: relative; z-index: 1;
+    }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      font-size: 1.2rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 2px var(--navy);
+    }
+    .step-title { font-weight: 700; color: var(--navy); margin-bottom: 4px; font-size: .95rem; }
+    .step-zh { font-family: 'Noto Sans TC', sans-serif; font-size: .78rem; color: var(--muted); margin-bottom: 8px; }
+    .step-desc { font-size: .85rem; color: var(--muted); }
+
+    /* ── Testimonials ── */
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .testimonial {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testimonial-text {
+      font-size: .92rem; color: var(--muted); line-height: 1.7;
+      margin-bottom: 20px; font-style: italic;
+    }
+    .testimonial-author { font-weight: 600; color: var(--navy); font-size: .88rem; }
+    .testimonial-from { font-family: 'Noto Sans TC', sans-serif; font-size: .78rem; color: var(--muted); }
+
+    /* ── Contact ── */
+    .contact-section {
+      background: linear-gradient(135deg, var(--navy), var(--mid));
+      color: var(--white); padding: 80px 0;
+    }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+    }
+    .contact-heading { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+    .contact-heading-zh { font-family: 'Noto Sans TC', sans-serif; font-size: 1rem; color: rgba(255,255,255,.65); margin-bottom: 24px; }
+    .contact-desc { color: rgba(255,255,255,.8); font-size: .95rem; margin-bottom: 32px; }
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--white);
+      transition: background .2s, transform .15s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,.18); transform: translateX(4px); }
+    .contact-card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card-label { font-weight: 600; font-size: .9rem; }
+    .contact-card-value { font-size: .85rem; color: rgba(255,255,255,.7); margin-top: 2px; }
+    .contact-form-box {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .form-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; }
+    .form-title-zh { font-family: 'Noto Sans TC', sans-serif; font-size: .82rem; color: rgba(255,255,255,.6); margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 500; color: rgba(255,255,255,.8); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 11px 14px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: .9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.4); }
+    .form-group select option { background: var(--navy); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--gold-light);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%; padding: 13px;
+      background: var(--gold); color: var(--navy);
+      font-weight: 700; font-size: .95rem;
+      border: none; border-radius: 999px;
+      cursor: pointer; font-family: inherit;
+      transition: background .2s, transform .15s;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer {
+      background: #071a38;
+      color: rgba(255,255,255,.55);
+      padding: 32px 0;
+      font-size: .82rem;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-brand { color: var(--gold); font-weight: 700; font-size: .95rem; }
+    .footer-legal { font-family: 'Noto Sans TC', sans-serif; font-size: .75rem; line-height: 1.6; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero-inner, .why-grid, .bno-inner, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+      .hero-card { display: none; }
+      .nav-links { display: none; }
+      .process-steps::before { display: none; }
+      .section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo">SZ</div>
+      <span>Sandy Zeng &nbsp;<span>| Mortgage Advisor 按揭顧問</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services 服務</a></li>
+      <li><a href="#why">About 關於</a></li>
+      <li><a href="#bno">BN(O) 持有人</a></li>
+      <li><a href="#process">Process 流程</a></li>
+      <li><a href="#contact">Contact 聯絡</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://wa.me/447751592125" target="_blank" class="btn btn-primary" style="padding:10px 20px;font-size:.85rem;">
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-eyebrow">🇬🇧 UK Mortgage Specialist for the HK Community</p>
+      <h1>Your Hong Kong Trusted <em>Mortgage Advisor</em> in the UK</h1>
+      <p class="hero-zh">專為英國港人提供的按揭顧問服務</p>
+      <p class="hero-desc">Whether you're buying your first home, investing in property, or remortgaging — I'm here to guide you every step of the way, in Cantonese and English.</p>
+      <p class="hero-desc-zh">不論是首次置業、買樓投資，還是轉按，我以廣東話全程陪你走每一步。</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/447751592125" target="_blank" class="btn btn-primary">
+          💬 WhatsApp Me 即時聯絡
+        </a>
+        <a href="#services" class="btn btn-outline">View Services 查看服務</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-title">Get in Touch 聯絡我</p>
+      <p class="hero-card-sub">Free consultation · 免費諮詢</p>
+      <div class="badge-row">
+        <span class="badge">🏠 First-Time Buyer</span>
+        <span class="badge">🏢 Buy-to-Let</span>
+        <span class="badge">🔄 Remortgage</span>
+        <span class="badge">🛂 BN(O) Visa</span>
+      </div>
+      <a href="https://wa.me/447751592125" class="contact-item" target="_blank">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#25D366" d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L0 24l6.335-1.524A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.032-1.388l-.36-.214-3.762.905.952-3.665-.235-.375A9.808 9.808 0 012.182 12c0-5.42 4.398-9.818 9.818-9.818S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        07751 592 125
+      </a>
+      <a href="mailto:sandy@g3mortgages.co.uk" class="contact-item">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="3" stroke="#c9973a" stroke-width="1.8"/><path d="M2 7l10 7 10-7" stroke="#c9973a" stroke-width="1.8" stroke-linecap="round"/></svg>
+        sandy@g3mortgages.co.uk
+      </a>
+      <p class="fca-note">Authorised and regulated by the Financial Conduct Authority (FCA). Your home may be repossessed if you do not keep up repayments on your mortgage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services ── -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="tag">Our Services · 我們的服務</div>
+    <h2 class="section-title">Tailored Mortgage Solutions<br><span class="zh">為您度身訂造的按揭方案</span></h2>
+    <p class="section-sub">From your first home to your property portfolio — we've got you covered. 由首置到投資物業，全程為你搞掂。</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <p class="service-title">First-Time Buyer</p>
+        <p class="service-title-zh">首次置業</p>
+        <p class="service-desc">Navigating the UK property market for the first time can be daunting. We'll explain every step — from AIP to completion — in plain language, in Cantonese.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <p class="service-title">Buy-to-Let Mortgages</p>
+        <p class="service-title-zh">買樓放租</p>
+        <p class="service-desc">Looking to invest in UK property? We help you find the most competitive buy-to-let deals, including options for those with overseas income.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <p class="service-title">Remortgaging</p>
+        <p class="service-title-zh">轉按 / 再按揭</p>
+        <p class="service-desc">Your fixed rate ending soon? Don't roll onto your lender's standard rate. We'll find you a better deal before it's too late, saving you money every month.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛂</div>
+        <p class="service-title">BN(O) & New to UK</p>
+        <p class="service-title-zh">BN(O) 簽證 / 新移民</p>
+        <p class="service-desc">Specialist advice for HK arrivals — understanding which lenders welcome BN(O) holders, how UK credit history is built, and how to plan your first purchase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Why Sandy ── -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="tag">Why Choose Me · 為何選擇我</div>
+        <h2 class="section-title">A Mortgage Advisor Who<br>Truly Understands You<br><span class="zh">真正明白你需要的按揭顧問</span></h2>
+        <ul class="why-list" style="margin-top:32px;">
+          <li class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-text">
+              <strong>Cantonese-speaking advisor 廣東話服務</strong>
+              <small>No language barrier. Explain complex mortgage terms in plain Cantonese. 用廣東話解釋所有按揭條款，冇語言隔閡。</small>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-text">
+              <strong>Whole-of-market access 全市場產品比較</strong>
+              <small>Access to hundreds of mortgage products across major UK lenders — not just one bank. 比較英國主要銀行及貸款機構產品。</small>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-text">
+              <strong>HK expat expertise 深明港人需要</strong>
+              <small>Understand the unique challenges facing HK newcomers — from credit history to overseas income. 了解港人移英面對的獨特按揭挑戰。</small>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-text">
+              <strong>FCA regulated · 受FCA監管</strong>
+              <small>Fully authorised and regulated by the Financial Conduct Authority. 持牌合規，受英國金融行為監管局監管。</small>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-text">
+              <strong>Free initial consultation · 免費初步諮詢</strong>
+              <small>No obligation, no pressure. Just honest advice to help you plan your next step. 無壓力、無佣金推銷，只有真誠建議。</small>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-visual">
+        <div class="why-stat">
+          <div class="stat-num">Whole</div>
+          <div class="stat-label">of Market Access</div>
+          <div class="stat-label-zh">全市場按揭產品選擇</div>
+        </div>
+        <div class="why-stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Cantonese Service Available</div>
+          <div class="stat-label-zh">廣東話全程服務</div>
+        </div>
+        <div class="why-stat">
+          <div class="stat-num">Free</div>
+          <div class="stat-label">Initial Consultation</div>
+          <div class="stat-label-zh">免費初步諮詢</div>
+        </div>
+        <div class="why-stat">
+          <div class="stat-num">FCA</div>
+          <div class="stat-label">Authorised &amp; Regulated</div>
+          <div class="stat-label-zh">受英國金融行為監管局監管</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BN(O) Section ── -->
+<section class="section section-alt" id="bno">
+  <div class="container">
+    <div class="bno-inner">
+      <div>
+        <div class="tag">BN(O) Visa Holders · BN(O) 簽證持有人</div>
+        <h2 class="section-title">New to the UK?<br>We Help HK Arrivals Get on the Property Ladder<br><span class="zh">剛移英？我們協助港人置業</span></h2>
+        <p style="color:var(--muted);margin:16px 0 28px;font-size:.95rem;">Moving to the UK on a BN(O) visa brings unique mortgage challenges. Many lenders are unfamiliar with your situation — but I know which ones welcome you and how to present your case. <span style="font-family:'Noto Sans TC',sans-serif;font-size:.85em;">BN(O)移英後，按揭申請有其獨特挑戰，我知道哪些銀行歡迎你，亦懂得如何為你爭取最佳結果。</span></p>
+        <ul class="bno-checklist">
+          <li>Advice on building UK credit history before applying 如何在申請前建立英國信貸記錄</li>
+          <li>Lenders that accept BN(O) / pre-settled status 接受BN(O)或臨時居留身份的銀行</li>
+          <li>Using overseas income for UK mortgage affordability 以海外收入計算英國按揭供款能力</li>
+          <li>Gifted deposit guidance from family in HK 家人從香港匯款作首期的安排</li>
+          <li>Step-by-step guidance from AIP to completion 由原則批准到完成交易全程跟進</li>
+          <li>All in Cantonese — no language barrier 廣東話全程服務，冇語言隔閡</li>
+        </ul>
+        <a href="https://wa.me/447751592125" target="_blank" class="btn btn-navy" style="margin-top:32px;">
+          💬 Chat on WhatsApp 即時Whatsapp
+        </a>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--navy),var(--mid));border-radius:20px;padding:40px;color:var(--white);">
+        <p style="font-size:2.5rem;margin-bottom:8px;">🇭🇰 → 🇬🇧</p>
+        <p style="font-weight:700;font-size:1.2rem;margin-bottom:6px;">香港人移英置業指南</p>
+        <p style="font-family:'Noto Sans TC',sans-serif;font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:28px;">Your HK-to-UK Property Journey</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:16px;">
+            <p style="font-weight:600;font-size:.9rem;margin-bottom:4px;">📋 Step 1: Free Consultation 免費諮詢</p>
+            <p style="font-size:.8rem;color:rgba(255,255,255,.65);font-family:'Noto Sans TC',sans-serif;">Understand your situation, budget &amp; timeline 了解你的情況、預算及時間表</p>
+          </div>
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:16px;">
+            <p style="font-weight:600;font-size:.9rem;margin-bottom:4px;">🏦 Step 2: AIP Application 原則批准</p>
+            <p style="font-size:.8rem;color:rgba(255,255,255,.65);font-family:'Noto Sans TC',sans-serif;">Find the right lender &amp; get your Agreement in Principle 揀選合適銀行，取得原則批准</p>
+          </div>
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:16px;">
+            <p style="font-weight:600;font-size:.9rem;margin-bottom:4px;">🔑 Step 3: Full Application &amp; Completion 全面申請及完成交易</p>
+            <p style="font-size:.8rem;color:rgba(255,255,255,.65);font-family:'Noto Sans TC',sans-serif;">We handle the paperwork and liaise with solicitors 我們跟進文件及律師事宜</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Process ── -->
+<section class="section" id="process">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="tag">How It Works · 服務流程</div>
+      <h2 class="section-title">Simple, Stress-Free Process<br><span class="zh" style="display:inline;font-size:.6em;">簡單、輕鬆的按揭申請流程</span></h2>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p class="step-title">Free Consultation</p>
+        <p class="step-zh">免費初步諮詢</p>
+        <p class="step-desc">WhatsApp or call me — tell me your situation and goals. No obligation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p class="step-title">Fact Find</p>
+        <p class="step-zh">收集資料</p>
+        <p class="step-desc">We gather your income, credit, and property details to assess affordability.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p class="step-title">Mortgage Research</p>
+        <p class="step-zh">全市場搜尋</p>
+        <p class="step-desc">I search hundreds of products to find the best fit for your circumstances.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p class="step-title">Application</p>
+        <p class="step-zh">提交申請</p>
+        <p class="step-desc">We submit your application and keep you updated throughout the process.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <p class="step-title">Completion 🔑</p>
+        <p class="step-zh">完成交易</p>
+        <p class="step-desc">Mortgage offer issued, solicitors complete, and you get your keys!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section class="contact-section" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <h2 class="contact-heading">Ready to Get Started?</h2>
+      <p class="contact-heading-zh">準備好開始了嗎？即時聯絡我</p>
+      <p class="contact-desc">Reach out for a free, no-obligation consultation — in Cantonese or English. I'm here to help you find the right mortgage for your situation. 免費初步諮詢，廣東話或英語均可。</p>
+      <div class="contact-cards">
+        <a href="https://wa.me/447751592125" target="_blank" class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path fill="#0d2d5e" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#0d2d5e" d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L0 24l6.335-1.524A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.032-1.388l-.36-.214-3.762.905.952-3.665-.235-.375A9.808 9.808 0 012.182 12c0-5.42 4.398-9.818 9.818-9.818S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+          </div>
+          <div>
+            <p class="contact-card-label">WhatsApp (fastest · 最快)</p>
+            <p class="contact-card-value">07751 592 125</p>
+          </div>
+        </a>
+        <a href="mailto:sandy@g3mortgages.co.uk" class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="20" height="16" x="2" y="4" rx="3" stroke="#0d2d5e" stroke-width="2"/><path d="M2 7l10 7 10-7" stroke="#0d2d5e" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <p class="contact-card-label">Email 電郵</p>
+            <p class="contact-card-value">sandy@g3mortgages.co.uk</p>
+          </div>
+        </a>
+        <div class="contact-card" style="cursor:default;">
+          <div class="contact-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path stroke="#0d2d5e" stroke-width="2" stroke-linecap="round" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke="#0d2d5e" stroke-width="2" d="M9 22V12h6v10"/></svg>
+          </div>
+          <div>
+            <p class="contact-card-label">FCA Regulated · 受FCA監管</p>
+            <p class="contact-card-value">Authorised &amp; Regulated by the Financial Conduct Authority</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-box" style="padding:0;overflow:hidden;border-radius:16px;">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe3d2qazCZhz0Av7WOh8lTM5QnR1MgrVF-4OOgowS9NhXhiAg/viewform?embedded=true"
+        width="100%"
+        height="620"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        style="display:block;border-radius:16px;">
+        Loading…
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">Sandy Zeng · Mortgage Advisor</p>
+      <p style="margin-top:4px;">📧 sandy@g3mortgages.co.uk &nbsp;|&nbsp; 📱 07751 592 125</p>
+    </div>
+    <div class="footer-legal" style="max-width:420px;text-align:right;">
+      Authorised and regulated by the Financial Conduct Authority.<br>
+      Your home may be repossessed if you do not keep up repayments on your mortgage.<br>
+      <span style="font-family:'Noto Sans TC',sans-serif;">如未能持續償還按揭，你的物業可能被收回。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth active link highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--gold-light)' : 'rgba(255,255,255,.8)';
+    });
+  });
+</script>
+
+</body>
+</html>
